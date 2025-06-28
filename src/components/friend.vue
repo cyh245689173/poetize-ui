@@ -58,9 +58,9 @@
           <blockquote>
             <div>网站名称: {{$constant.friendWebName}}</div>
             <div>网址: {{$constant.friendUrl}}</div>
-            <div>头像: {{$constant.friendAvatar}}</div>
+            <!-- <div>头像: {{$constant.friendAvatar}}</div> -->
             <div>描述: {{$constant.friendIntroduction}}</div>
-            <div>网站封面: {{$constant.friendCover}}</div>
+            <!-- <div>网站封面: {{$constant.friendCover}}</div> -->
           </blockquote>
         </div>
         <div style="font-size: 20px;font-weight: bold">🌸申请方式</div>

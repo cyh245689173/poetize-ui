@@ -9,11 +9,11 @@
         </video>
         <div style="position: absolute;left: 0;top: 0;padding: 5px 20px">
           <!-- 标题 -->
-          <div style="color: var(--white);margin: 0 10px">
-            <div style="font-size: 30px;font-weight: bold;line-height: 2">
-              百宝箱
-            </div>
-          </div>
+          <!-- <div style="color: var(--white);margin: 0 10px"> -->
+            <!-- <div style="font-size: 30px;font-weight: bold;line-height: 2"> -->
+              <!-- 百宝箱 -->
+            <!-- </div> -->
+          <!-- </div> -->
           <div class="card-container">
             <!-- 友人帐 -->
             <div @click="changeFavorite(3)"
