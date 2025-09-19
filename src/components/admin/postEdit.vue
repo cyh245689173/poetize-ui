@@ -197,48 +197,15 @@
         fd.append("type", "articlePicture");
         fd.append("storeType", storeType);
 
-        if (storeType === "local") {
-          this.saveLocal(pos, fd);
-        } else if (storeType === "qiniu") {
-          this.saveQiniu(pos, fd);
-        }
+          this.savePhoto(pos, fd);
+ 
       },
-      saveLocal(pos, fd) {
+      savePhoto(pos, fd) {
         this.$http.upload(this.$constant.baseURL + "/resource/upload", fd, true)
           .then((res) => {
             if (!this.$common.isEmpty(res.data)) {
               let url = res.data;
               this.$refs.md.$img2Url(pos, url);
-            }
-          })
-          .catch((error) => {
-            this.$message({
-              message: error.message,
-              type: "error"
-            });
-          });
-      },
-      saveQiniu(pos, fd) {
-        this.$http.get(this.$constant.baseURL + "/qiniu/getUpToken", {key: fd.get("key")}, true)
-          .then((res) => {
-            if (!this.$common.isEmpty(res.data)) {
-              fd.append("token", res.data);
-
-              this.$http.uploadQiniu(this.$store.state.sysConfig.qiniuUrl, fd)
-                .then((res) => {
-                  if (!this.$common.isEmpty(res.key)) {
-                    let url = this.$store.state.sysConfig['qiniu.downloadUrl'] + res.key;
-                    let file = fd.get("file");
-                    this.$common.saveResource(this, "articlePicture", url, file.size, file.type, file.name, "qiniu", true);
-                    this.$refs.md.$img2Url(pos, url);
-                  }
-                })
-                .catch((error) => {
-                  this.$message({
-                    message: error.message,
-                    type: "error"
-                  });
-                });
             }
           })
           .catch((error) => {

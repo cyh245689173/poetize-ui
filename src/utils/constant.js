@@ -9,9 +9,9 @@ export default {
   // baseURL: location.protocol + "//" + location.hostname + (location.port ? ':' + location.port : '') + "/api",
   // imBaseURL: location.protocol + "//" + location.hostname + (location.port ? ':' + location.port : '') + "/im",
 
-  baseURL: "http://101.200.242.67:18086/api",
-  imBaseURL: "http://101.200.242.67:81/im",
-  webURL: "http://101.200.242.67:18086",
+  baseURL: "http://www.kdy.icu:80/api",
+  imBaseURL: "http://www.kdy.icu:81/im",
+  webURL: "http://www.kdy.icu:80",
   host: location.hostname + (location.port ? ':' + location.port : ''),
 
   live2d_path: "https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/",
